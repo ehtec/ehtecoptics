@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="185.11769mm"
+   height="185.11792mm"
+   viewBox="0 0 185.11769 185.11792"
+   version="1.1"
+   id="svg5811"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="render.svg">
+  <defs
+     id="defs5805">
+    <filter
+       inkscape:menu-tooltip="Pressed metal with a rolled edge"
+       inkscape:menu="Bevels"
+       inkscape:label="Pressed Steel"
+       style="color-interpolation-filters:sRGB"
+       id="filter3801">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="3"
+         id="feGaussianBlur3779" />
+      <feBlend
+         in2="result1"
+         result="result5"
+         mode="multiply"
+         in="result1"
+         id="feBlend3781" />
+      <feGaussianBlur
+         in="result5"
+         result="result6"
+         stdDeviation="1"
+         id="feGaussianBlur3783" />
+      <feComposite
+         result="result8"
+         in2="result5"
+         in="result6"
+         operator="xor"
+         id="feComposite3785" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite3787" />
+      <feSpecularLighting
+         in="fbSourceGraphic"
+         result="result1"
+         lighting-color="#ffffff"
+         surfaceScale="2"
+         specularConstant="2.20000005"
+         specularExponent="55"
+         id="feSpecularLighting3791">
+        <fePointLight
+           x="-5000"
+           y="-10000"
+           z="20000"
+           id="fePointLight3789" />
+      </feSpecularLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         in="result1"
+         result="result2"
+         operator="in"
+         id="feComposite3793" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="2"
+         k3="1"
+         in2="result2"
+         id="feComposite3795" />
+      <feComposite
+         in2="result4"
+         in="result4"
+         operator="in"
+         result="result91"
+         id="feComposite3797" />
+      <feBlend
+         mode="darken"
+         in2="result91"
+         id="feBlend3799" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="369.82872"
+     inkscape:cy="584.11481"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5808">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-7.9828191,-57.786282)">
+    <path
+       style="fill:#008000;stroke-width:0.87299532;filter:url(#filter3801)"
+       d="m 388.57227,223.94727 a 212.85715,212.85715 0 0 0 -42.48829,4.51367 l -10.37304,47.74414 a 169.28571,169.28571 0 0 0 -30.55664,13.5332 l -42.30274,-24.38476 a 212.85715,212.85715 0 0 0 -51.69531,54.0957 l 26.46094,41.14844 a 169.28571,169.28571 0 0 0 -12.05664,31.21093 l -47.10743,12.6543 a 212.85715,212.85715 0 0 0 -2.73828,32.3418 212.85715,212.85715 0 0 0 4.51172,42.48828 l 47.7461,10.37305 a 169.28571,169.28571 0 0 0 13.5332,30.55468 l -24.38672,42.30469 a 212.85715,212.85715 0 0 0 54.0957,51.69531 l 41.15039,-26.46093 a 169.28571,169.28571 0 0 0 31.20899,12.05468 l 12.65625,47.10938 a 212.85715,212.85715 0 0 0 32.3418,2.73828 212.85715,212.85715 0 0 0 42.48632,-4.51367 l 10.37305,-47.74414 a 169.28571,169.28571 0 0 0 30.55664,-13.53321 l 42.30274,24.38672 a 212.85715,212.85715 0 0 0 51.69531,-54.0957 l -26.46094,-41.15039 a 169.28571,169.28571 0 0 0 12.05469,-31.20899 l 47.10937,-12.65625 a 212.85715,212.85715 0 0 0 2.73828,-32.34179 212.85715,212.85715 0 0 0 -4.51171,-42.48633 l -47.7461,-10.37305 a 169.28571,169.28571 0 0 0 -13.5332,-30.55664 l 24.38672,-42.30273 A 212.85715,212.85715 0 0 0 505.92773,259.39062 L 464.7793,285.84961 A 169.28571,169.28571 0 0 0 433.56836,273.79492 L 420.91211,226.6875 a 212.85715,212.85715 0 0 0 -32.33984,-2.74023 z m -0.002,95.71484 A 117.14286,117.14286 0 0 1 505.71484,436.80469 117.14286,117.14286 0 0 1 388.57031,553.94727 117.14286,117.14286 0 0 1 271.42773,436.80469 117.14286,117.14286 0 0 1 388.57031,319.66211 Z"
+       transform="matrix(0.22781669,0.13455072,-0.13455072,0.22781669,70.791026,-1.4487101)"
+       id="path3725"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

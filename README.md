@@ -1,35 +1,53 @@
-ehtecoptics is a FreeCAD extension for modelling 3D lenses, snell's law, and so on.
+## FreeCAD ehtecoptics workbench
 
-1) installation
+ehtecoptics is a FreeCAD extension for modeling 3D lenses, snell's law, and so on.
 
-Install FreeCAD from the website or from the repositories if you use Debian or Ubuntu.
+## Screenshots
 
-sudo apt-get install freecad
 
-Install Python Numpy.
+## Prerequisites
 
-sudo apt-get install python-numpy
+* [FreeCAD](https://freecad.org) v0.19 or higher
+* Python3
+* NumPY
 
-OR
+## Installation
 
-pip install numpy
+* Install FreeCAD 
 
-OR
+  ```bash
+  sudo apt-get install freecad
+  ```
 
-from the website. You need to have Python 3 installed.
+* Install Python Numpy
 
-Copy the ehtecoptics directory to your .FreeCAD/Mod directory.
+  Debian/Ubuntu
+    ```bash
+    sudo apt-get install python-numpy
+    ```
+  pip
+    ```bash
+    pip3 install numpy
+    ```
 
-When you start FreeCAD, you will find a Workbench named ehtec Optics in the workbench menu.
+* Copy the ehtecoptics directory to your `.FreeCAD/Mod` directory.
+* Start FreeCAD. A new workbench named `ehtec Optics` will be available in the workbench dropdown menu.
 
-2) Usage
+## Usage
 
-Create a part object of your choice using the part Workbench.
+1. Start FreeCAD
+2. Open the Part workbench from the workbench dropdown menu.
+3. Create a part object of your choice.
+4. Change to the ehtecoptics workbench (in the workbench dropdown menu)
+5. Select the solid you created and click on the first icon in the menu (hovering over it you will see: "convert a solid to a lens")
+6. Click on the second icon in the menu to create a laser.
+7. Move the Lens in front of the Laser via `Edit -> Placement`
+8. Open the Python Console (View menu).
+9. Type `import render` and press `Enter`.
+10. Then type `render.render()` and press `Enter`.  
 
-Change to the ehtecoptics workbench. Select the solid you created and click on the first icon in the menu ( when you hover over it you will see: "convert a solid to a lens")
+**Result:** You may need to wait a few seconds, depending on your cpu. The program will render a beam through the lens.
 
-Click on the second icon in the menu to create a laser. Move the Lens in front of the Laser via Edit -> Placement.
-
-Open the Python Console (View menu.) Type "import render" (without the quotes) and press Return. Then type "render.render()" again without quotes and press return. You may need to wait a few seconds, depending on your cpu. The program will render a beam through the lens.
-
-You can change the color of the beam by changing the Wavelength property of the laser. You can make a multi-ray-laser by clicking the according button.
+**Notes:** 
+* You can change the color of the beam by changing the Wavelength property of the laser.
+* You can make a multi-ray-laser by clicking the relevant button.

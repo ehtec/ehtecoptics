@@ -1,19 +1,21 @@
 import FreeCAD
-import FreeCADGui
-import mirror
 import FreeCAD as App
+import FreeCADGui
+
+import mirror
+
 
 class Convert_To_Mirror_Class():
     """My new command"""
 
     def GetResources(self):
-        iconpath = FreeCAD.getUserAppDataDir().encode("utf-8")+'Mod/ehtecoptics/resources/mirror.svg.png'
-        #iconpath ='/home/pi/.FreeCAD/Mod/ehtecoptics/resources/ehtec.svg'
-        #print iconpath
-        return {'Pixmap'  : iconpath, # the name of a svg file available in the resources
-                'Accel' : "Shift+A", # a default shortcut (optional)
+        iconpath = FreeCAD.getUserAppDataDir().encode("utf-8") + 'Mod/ehtecoptics/resources/mirror.svg.png'
+        # iconpath ='/home/pi/.FreeCAD/Mod/ehtecoptics/resources/ehtec.svg'
+        # print iconpath
+        return {'Pixmap': iconpath,  # the name of a svg file available in the resources
+                'Accel': "Shift+A",  # a default shortcut (optional)
                 'MenuText': "Convert To Absorber",
-                'ToolTip' : "Converts a solid to a mirror"}
+                'ToolTip': "Converts a solid to a mirror"}
 
     def Activated(self):
         "Do something here"
@@ -22,7 +24,7 @@ class Convert_To_Mirror_Class():
         theshape = theobj.Shape
         amirror.Shape = theshape
         theobj.ViewObject.Visibility = False
-        amirror.ViewObject.ShapeColor=(131.0/255,137.0/255,150.0/255)
+        amirror.ViewObject.ShapeColor = (131.0 / 255, 137.0 / 255, 150.0 / 255)
         return
 
     def IsActive(self):
@@ -30,5 +32,5 @@ class Convert_To_Mirror_Class():
         are met or not. This function is optional."""
         return True
 
-FreeCADGui.addCommand('Convert_To_Mirror',Convert_To_Mirror_Class())
 
+FreeCADGui.addCommand('Convert_To_Mirror', Convert_To_Mirror_Class())

@@ -1,7 +1,8 @@
 import FreeCAD
-import FreeCADGui
-import lens
 import FreeCAD as App
+import FreeCADGui
+
+import lens
 
 
 class Convert_To_Lens_Class():

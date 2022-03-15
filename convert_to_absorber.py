@@ -1,19 +1,21 @@
 import FreeCAD
-import FreeCADGui
-import absorber
 import FreeCAD as App
+import FreeCADGui
+
+import absorber
+
 
 class Convert_To_Absorber_Class():
     """My new command"""
 
     def GetResources(self):
-        iconpath = FreeCAD.getUserAppDataDir().encode("utf-8")+'Mod/ehtecoptics/resources/absorber.svg.png'
-        #iconpath ='/home/pi/.FreeCAD/Mod/ehtecoptics/resources/ehtec.svg'
-        #print iconpath
-        return {'Pixmap'  : iconpath, # the name of a svg file available in the resources
-                'Accel' : "Shift+A", # a default shortcut (optional)
+        iconpath = FreeCAD.getUserAppDataDir().encode("utf-8") + 'Mod/ehtecoptics/resources/absorber.svg.png'
+        # iconpath ='/home/pi/.FreeCAD/Mod/ehtecoptics/resources/ehtec.svg'
+        # print iconpath
+        return {'Pixmap': iconpath,  # the name of a svg file available in the resources
+                'Accel': "Shift+A",  # a default shortcut (optional)
                 'MenuText': "Convert To Absorber",
-                'ToolTip' : "Converts a solid to an absorber"}
+                'ToolTip': "Converts a solid to an absorber"}
 
     def Activated(self):
         "Do something here"
@@ -22,7 +24,7 @@ class Convert_To_Absorber_Class():
         theshape = theobj.Shape
         aabsorber.Shape = theshape
         theobj.ViewObject.Visibility = False
-        aabsorber.ViewObject.ShapeColor=(0.0/255,0.0/255,0.0/255)
+        aabsorber.ViewObject.ShapeColor = (0.0 / 255, 0.0 / 255, 0.0 / 255)
         return
 
     def IsActive(self):
@@ -31,4 +33,4 @@ class Convert_To_Absorber_Class():
         return True
 
 
-FreeCADGui.addCommand('Convert_To_Absorber',Convert_To_Absorber_Class())
+FreeCADGui.addCommand('Convert_To_Absorber', Convert_To_Absorber_Class())

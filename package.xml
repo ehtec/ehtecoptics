@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>Ehtecoptics Workbench</name>
+  <description>Simulating propagation of laser light (3D lenses, snell's law, etc...).</description>
+  <version>0.2</version>
+  <date>2022-04-24</date>
+  <maintainer email="@ehtec">@ehtec</maintainer>
+  <license file="LICENSE">LGPLv2.1</license>
+  <url type="repository" branch="main">https://github.com/ehtec/ehtecoptics</url>
+  <url type="bugtacker" branch="main">https://github.com/ehtec/ehtecoptics/issues</url>
+  <url type="readme" branch="main">https://github.com/ehtec/ehtecoptics/blob/master/README.md</url>
+  <icon>resources/ehtec.svg</icon> <!-- If you include your icon here, you don't have to submit it to the main FreeCAD repo -->
+ 
+  <content>
+    <workbench>
+      <classname>MyLegacyWorkbench</classname>
+      <subdirectory>./</subdirectory>
+      <freecadmin>0.19.4</freecadmin>
+      <depends>numpy</depends>
+      <tag>optics</tag>
+      <tag>laser</tag>
+    </workbench>
+  </content>
+
+</package>

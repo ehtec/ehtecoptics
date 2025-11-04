@@ -108,7 +108,8 @@ def render():
             # changed euler angles to use of normalAt
             AB = np.array([obj.Shape.Faces[1].normalAt(0, 0).x, obj.Shape.Faces[1].normalAt(0, 0).y,
                            obj.Shape.Faces[1].normalAt(0, 0).z])
-            B = A + MAXRAYLENGTH * AB
+            AB = normalize(AB)  # Normalize to ensure unit vector
+            B = A + obj.Ray_Length * AB
             next_ray = AB
             # draw the first ray and start loop
             A_v = FreeCAD.Vector(A[0], A[1], A[2])
@@ -145,6 +146,7 @@ def render():
             # changed to normalAt instead of euler angles
             AB = np.array([obj.Shape.Faces[5].normalAt(0, 0).x, obj.Shape.Faces[5].normalAt(0, 0).y,
                            obj.Shape.Faces[5].normalAt(0, 0).z])
+            AB = normalize(AB)  # Normalize to ensure unit vector
             next_ray = AB
             # get coordinates of A points
             A_list = []
@@ -158,7 +160,7 @@ def render():
                     A_list.append((ver2_np + i * v24_step + j * v26_step))
             for elem in A_list:
                 A = elem
-                B = elem + AB * MAXRAYLENGTH
+                B = elem + AB * obj.Ray_Length
                 A_v = FreeCAD.Vector(A[0], A[1], A[2])
                 B_v = FreeCAD.Vector(B[0], B[1], B[2])
                 beams.append((A, B, A_v, B_v, next_ray, obj))
@@ -167,6 +169,7 @@ def render():
             A = np.array([obj.Placement.Base.x, obj.Placement.Base.y, obj.Placement.Base.z])
             AB = np.array([obj.Shape.Faces[1].normalAt(0, 0).x, obj.Shape.Faces[1].normalAt(0, 0).y,
                            obj.Shape.Faces[1].normalAt(0, 0).z])
+            AB = normalize(AB)  # Normalize to ensure unit vector
             next_ray = AB
             A_list = []
             N = int(round(obj.Density * ((obj.Radius) ** 2) * np.pi))
@@ -177,7 +180,7 @@ def render():
                 A_list.append(v1 * elem[0] + v2 * elem[1] + A)
             for elem in A_list:
                 A = elem
-                B = elem + AB * MAXRAYLENGTH
+                B = elem + AB * obj.Ray_Length
                 A_v = FreeCAD.Vector(A[0], A[1], A[2])
                 B_v = FreeCAD.Vector(B[0], B[1], B[2])
                 beams.append((A, B, A_v, B_v, next_ray, obj))
@@ -189,7 +192,7 @@ def render():
         B_v = beam[3]
         next_ray = beam[4]
         obj = beam[5]
-        remaining_distance = MAXRAYLENGTH
+        remaining_distance = obj.Ray_Length
         # j = 0
         totref = False
         while True:

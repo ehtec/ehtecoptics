@@ -14,6 +14,7 @@ class SingleRayLaser:
         '''"App two point properties" '''
         obj.addProperty("App::PropertyFloat", "Wavelength", "Lens Workbench").Wavelength = 650.0  # nanometer
         obj.addProperty("App::PropertyFloat", "Power", "Lens Workbench").Power = 1.0  # milliwatt
+        obj.addProperty("App::PropertyFloat", "Ray_Length", "Lens Workbench").Ray_Length = 1000.0  # mm
         obj.addProperty("App::PropertyBool", "Activated", "Lens Workbench").Activated = True
         obj.Proxy = self
         obj.Shape = Part.makeCylinder(2.0, 15.0)
@@ -31,6 +32,7 @@ class RectangularLaser:
         '''"App two point properties" '''
         obj.addProperty("App::PropertyFloat", "Wavelength", "Lens Workbench").Wavelength = 650.0  # nanometer
         obj.addProperty("App::PropertyFloat", "Power", "Lens Workbench").Power = 1.0  # milliwatt
+        obj.addProperty("App::PropertyFloat", "Ray_Length", "Lens Workbench").Ray_Length = 1000.0  # mm
         obj.addProperty("App::PropertyBool", "Activated", "Lens Workbench").Activated = True
         obj.addProperty("App::PropertyFloat", "Width", "Lens Workbench").Width = 10  # mm
         obj.addProperty("App::PropertyFloat", "Height", "Lens Workbench").Height = 10  # mm
@@ -55,6 +57,7 @@ class CircularLaser:
         '''"App two point properties" '''
         obj.addProperty("App::PropertyFloat", "Wavelength", "Lens Workbench").Wavelength = 650.0  # nanometer
         obj.addProperty("App::PropertyFloat", "Power", "Lens Workbench").Power = 1.0  # milliwatt
+        obj.addProperty("App::PropertyFloat", "Ray_Length", "Lens Workbench").Ray_Length = 1000.0  # mm
         obj.addProperty("App::PropertyBool", "Activated", "Lens Workbench").Activated = True
         obj.addProperty("App::PropertyFloat", "Radius", "Lens Workbench").Radius = 5  # mm
         #		obj.addProperty("App::PropertyFloat", "Height", "Lens Workbench").Height = 10 #mm

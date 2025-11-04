@@ -205,6 +205,8 @@ def render():
             line = Draft.makeLine(A_v, B_v)
             # add the line to the Rays folder
             grp.addObject(line)
+            # Recompute to ensure shape is valid for intersection calculations
+            line.recompute()
             # input('press enter')
             # set the color
             wres = wavelen2rgb.wavelen2rgb(obj.Wavelength)
@@ -217,6 +219,8 @@ def render():
                 lobj = App.ActiveDocument.getObject(alens)
                 s1 = lobj.Shape
                 s2 = line.Shape
+                if s1.isNull() or s2.isNull():
+                    continue
                 cs = s1.common(s2)
                 # intersection_points = []
                 if cs.Vertexes:
@@ -229,6 +233,8 @@ def render():
                 lobj = App.ActiveDocument.getObject(aabsorber)
                 s1 = lobj.Shape
                 s2 = line.Shape
+                if s1.isNull() or s2.isNull():
+                    continue
                 cs = s1.common(s2)
                 # intersection_points = []
                 if cs.Vertexes:
@@ -241,6 +247,8 @@ def render():
                 lobj = App.ActiveDocument.getObject(amirror)
                 s1 = lobj.Shape
                 s2 = line.Shape
+                if s1.isNull() or s2.isNull():
+                    continue
                 cs = s1.common(s2)
                 # intersection_points = []
                 if cs.Vertexes:

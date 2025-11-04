@@ -306,7 +306,7 @@ def render():
                 v2_v = FreeCAD.Vector(v2[0], v2[1], v2[2])
                 lot = Draft.makeLine(v1_v, v2_v)
                 grp.addObject(lot)
-                lot.ViewObject.Visibility = True  # Set visibility AFTER adding to group
+                lot.ViewObject.Visibility = False  # Hide helper normal lines
                 # print angle
                 alpha = angle_between(np_vn, next_ray)
                 # make alpha opposite in case it is greater than 90 degrees

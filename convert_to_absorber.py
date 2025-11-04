@@ -9,7 +9,7 @@ class Convert_To_Absorber_Class():
     """My new command"""
 
     def GetResources(self):
-        iconpath = FreeCAD.getUserAppDataDir().encode("utf-8") + 'Mod/ehtecoptics/resources/absorber.svg.png'
+        iconpath = FreeCAD.getUserAppDataDir() + 'Mod/ehtecoptics/resources/absorber.svg.png'
         # iconpath ='/home/pi/.FreeCAD/Mod/ehtecoptics/resources/ehtec.svg'
         # print iconpath
         return {'Pixmap': iconpath,  # the name of a svg file available in the resources

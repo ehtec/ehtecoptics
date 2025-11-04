@@ -1,5 +1,14 @@
 import FreeCAD
 
+# Import all command modules to register them with FreeCAD
+import convert_to_lens
+import convert_to_absorber
+import convert_to_mirror
+import single_ray_laser
+import rectangular_laser
+import circular_laser
+import render_command
+
 
 class ehtecOptics(Workbench):
     MenuText = "ehtec Optics"

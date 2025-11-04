@@ -70,6 +70,8 @@ def render():
         App.ActiveDocument.removeObject("Rays")
     # create new Ray folder
     grp = App.ActiveDocument.addObject("App::DocumentObjectGroup", "Rays")
+    # Ensure the Rays group is visible
+    grp.ViewObject.Visibility = True
     # get the rays
     lines = [alinename for alinename in objnames if "Line" in alinename]
     # remove all lines
@@ -208,6 +210,7 @@ def render():
             wres = wavelen2rgb.wavelen2rgb(obj.Wavelength)
             lcol = tuple([x / 255.0 for x in wres])
             line.ViewObject.LineColor = lcol
+            line.ViewObject.Visibility = True  # Set visibility AFTER adding to group
             # search for intersection points with all lenses
             intersection_points = []
             for alens in lenses:
@@ -264,6 +267,7 @@ def render():
                 line = Draft.makeLine(A_v, FreeCAD.Vector(minpoint[0], minpoint[1], minpoint[2]))
                 grp.addObject(line)
                 line.ViewObject.LineColor = lcol
+                line.ViewObject.Visibility = True  # Set visibility AFTER adding to group
                 # end beam calculation if object is absorber type
                 if minlens in absorbers:
                     break
@@ -294,6 +298,7 @@ def render():
                 v2_v = FreeCAD.Vector(v2[0], v2[1], v2[2])
                 lot = Draft.makeLine(v1_v, v2_v)
                 grp.addObject(lot)
+                lot.ViewObject.Visibility = True  # Set visibility AFTER adding to group
                 # print angle
                 alpha = angle_between(np_vn, next_ray)
                 # make alpha opposite in case it is greater than 90 degrees
@@ -388,3 +393,6 @@ def render():
                 # line2.ViewObject.LineColor=lcol
             else:
                 break
+    # Force document recompute and view refresh
+    App.ActiveDocument.recompute()
+    FreeCAD.Gui.updateGui()

@@ -225,8 +225,7 @@ def render():
                 # intersection_points = []
                 if cs.Vertexes:
                     for v in cs.Vertexes:
-                        print
-                        "intersection point : ", v.Point
+                        print("intersection point : ", v.Point)
                         nv = np.array([v.Point.x, v.Point.y, v.Point.z])
                         intersection_points.append((nv, alens))
             for aabsorber in absorbers:
@@ -239,8 +238,7 @@ def render():
                 # intersection_points = []
                 if cs.Vertexes:
                     for v in cs.Vertexes:
-                        print
-                        "intersection point : ", v.Point
+                        print("intersection point : ", v.Point)
                         nv = np.array([v.Point.x, v.Point.y, v.Point.z])
                         intersection_points.append((nv, aabsorber))
             for amirror in mirrors:
@@ -253,8 +251,7 @@ def render():
                 # intersection_points = []
                 if cs.Vertexes:
                     for v in cs.Vertexes:
-                        print
-                        "intersection point : ", v.Point
+                        print("intersection point : ", v.Point)
                         nv = np.array([v.Point.x, v.Point.y, v.Point.z])
                         intersection_points.append((nv, amirror))
             if intersection_points:
@@ -293,12 +290,10 @@ def render():
                 uv = fs.parameter(pt)
                 nv = f.normalAt(uv[0], uv[1])
                 # nv.normalize()
-                print
-                nv
+                print(nv)
                 np_v = np.array([nv.x, nv.y, nv.z])
                 np_vn = normalize(np_v)
-                print
-                np_vn
+                print(np_vn)
                 # compute lot
                 v1 = minpoint + 15 * np_vn
                 v2 = minpoint - 15 * np_vn
@@ -315,8 +310,7 @@ def render():
                     outside = False
                 else:
                     outside = True
-                print
-                alpha
+                print(alpha)
                 # leave all the n stuff untouched if it is not a lens
                 if minlens in lenses:
                     if totref == False:
@@ -345,29 +339,22 @@ def render():
                         else:
                             n = o.Refractive_index
                     # for refraction / total reflection
-                    print
-                    "n=:"
-                    print
-                    n
-                    print
-                    "lastn=:"
-                    print
-                    lastn
+                    print("n=:")
+                    print(n)
+                    print("lastn=:")
+                    print(lastn)
                     chi = lastn * np.sin(alpha) / n
                     if chi >= 1:  # total reflection
-                        print
-                        "totalreflection"
+                        print("totalreflection")
                         totref = True
                         beta = np.pi - alpha
                     else:  # refraction
-                        print
-                        "refraction"
+                        print("refraction")
                         totref = False
                         beta = np.arcsin(chi)
                 if minlens in mirrors:
                     beta = np.pi - alpha
-                print
-                beta
+                print(beta)
                 if outside:
                     normal_rot = normalize(np.cross(next_ray, np_vn))
                 else:
